@@ -8,7 +8,7 @@ const musica = document.getElementById("musica");
 
 // IMÁGENES DEL CARRUSEL DE RECUERDOS (Usa tus archivos disponibles)
 const imagenes = [
-    //"img/001.jpg",
+    "img/001.jpg",
     "img/002.jpg",
     "img/003.jpg",
     "img/005.jpg",
