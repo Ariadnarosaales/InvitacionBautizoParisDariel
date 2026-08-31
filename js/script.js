@@ -6,7 +6,7 @@ const botonesFlotantes = document.getElementById("botones-flotantes");
 const btnPlayFlotante = document.getElementById("btnPlayFlotante");
 const musica = document.getElementById("musica");
 
-// IMÁGENES DEL CARRUSEL DE RECUERDOS (Usa tus archivos disponibles)
+// IMÁGENES DEL CARRUSEL DE RECUERDOS
 const imagenes = [
     "img/001.jpg",
     "img/002.jpg",
@@ -19,7 +19,7 @@ const imagenes = [
     "img/010.jpg",
     "img/012.jpg",
     "img/013.jpg",
-    "img/015.jpg" 
+    "img/015.jpg"
 ];
 let currentIndex = 0;
 
@@ -27,7 +27,7 @@ const sliderImg = document.getElementById("sliderImg");
 const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 
-// TRANSICIÓN AL PRESIONAR EL SELLO DE CERA
+// TRANSICIÓN AL PRESIONAR EL SOBRE
 btnAbrirSello.addEventListener("click", function () {
     pantallaSobre.style.opacity = "0";
 
@@ -35,6 +35,9 @@ btnAbrirSello.addEventListener("click", function () {
         pantallaSobre.classList.add("oculto");
         invitacionContenido.classList.remove("oculto");
         botonesFlotantes.classList.remove("oculto");
+
+        // CAMBIO DINÁMICO DE FONDO A FONDO2.JPG
+        document.body.classList.add("fondo-abierto");
 
         if (musica) {
             musica.play().catch(err => console.log("Audio bloqueado:", err));
@@ -77,17 +80,31 @@ btnPrev.addEventListener("click", function () {
     updateSlider();
 });
 
-// CUENTA REGRESIVA
+// CUENTA REGRESIVA EN TIEMPO REAL
 const fechaEvento = new Date("Oct 10, 2026 14:00:00").getTime();
 
-setInterval(function() {
+function actualizarCuentaRegresiva() {
     const ahora = new Date().getTime();
     const diferencia = fechaEvento - ahora;
 
     if (diferencia > 0) {
-        document.getElementById("days").innerText = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-        document.getElementById("hours").innerText = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        document.getElementById("minutes").innerText = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-        document.getElementById("seconds").innerText = Math.floor((diferencia % (1000 * 60)) / 1000);
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(dias).padStart(2, '0');
+        document.getElementById("hours").innerText = String(horas).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutos).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(segundos).padStart(2, '0');
+    } else {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
     }
-}, 1000);
+}
+
+// Ejecución inicial rápida
+actualizarCuentaRegresiva();
+setInterval(actualizarCuentaRegresiva, 1000);
