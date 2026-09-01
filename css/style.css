@@ -100,9 +100,9 @@ body.fondo-abierto {
 }
 .sobre-img-container {
     position: relative;
-    width: min(230px, 60vw);
-    max-width: 230px;
-    margin: -110px auto 0 auto;
+    width: min(190px, 50vw);
+    max-width: 190px;
+    margin: -100px auto 0 auto;
     order: 1;
 }
 
