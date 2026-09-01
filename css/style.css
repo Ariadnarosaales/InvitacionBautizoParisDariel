@@ -1,4 +1,3 @@
-```css
 * {
     margin: 0;
     padding: 0;
@@ -48,7 +47,7 @@ body.fondo-abierto {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: transparent;
+    background: transparent; 
     padding: 0;
     border: none;
     box-shadow: none;
@@ -60,6 +59,7 @@ body.fondo-abierto {
     color: #5c4535;
     font-weight: 600;
     margin-bottom: 60px;
+    
 }
 
 .titulo-script-lg {
@@ -81,11 +81,10 @@ body.fondo-abierto {
 }
 
 /* CONTENEDOR DE LA IMAGEN COMPLETA DEL SOBRE */
-
 .sobre-img-container {
     position: relative;
-    width: 75%;
-    max-width: 300px;
+    width: 100%;
+    max-width: 420px; /* Tamaño ideal para lucir el sobre junto con su nube */
     margin: -100px auto 0 auto;
 }
 
@@ -519,7 +518,6 @@ main {
 }
 
 .arrow-btn.left { left: 10px; }
-
 .arrow-btn.right { right: 10px; }
 
 .slider-caption {
@@ -542,4 +540,3 @@ main {
     padding: 12px 24px;
     box-shadow: 0 4px 12px rgba(60, 45, 35, 0.15);
 }
-```
