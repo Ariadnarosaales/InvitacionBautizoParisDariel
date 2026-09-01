@@ -91,18 +91,21 @@ body.fondo-abierto {
 }
 
 .pequeno {
-    font-size: 0.80rem;
-    letter-spacing: 5px;
+    width: 90%;
+    max-width: 300px;
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    line-height: 1.5;
     color: #5c4535;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin: 10px auto 0;
     order: 2;
 }
 .sobre-img-container {
     position: relative;
-    width: min(190px, 50vw);
-    max-width: 190px;
-    margin: -100px auto 0 auto;
+    width: min(165px, 45vw);
+    max-width: 165px;
+    margin: -90px auto 0 auto;
     order: 1;
 }
 
