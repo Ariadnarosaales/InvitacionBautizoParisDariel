@@ -554,3 +554,27 @@ main {
     padding: 12px 24px;
     box-shadow: 0 4px 12px rgba(60, 45, 35, 0.15);
 }
+
+/* =========================================
+   FIJAR ELEMENTOS DE LA PORTADA
+========================================= */
+
+.portada {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sobre */
+.sobre-css-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Texto debajo del sobre */
+.portada .frase {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
