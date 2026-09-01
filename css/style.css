@@ -33,46 +33,37 @@ body.fondo-abierto {
 ========================================= */
 
 .portada {
-
-    min-height: 100vh;
-
-    height: 100vh;
-
+    min-height: 100svh;
+    height: 100svh;
     display: flex;
-
     justify-content: center;
-
     align-items: center !important;
-
     padding: 20px 15px;
-
     overflow: hidden;
-
 }
+
 .contenedor-portada-cerrada {
     max-width: 450px;
     width: 100%;
     display: flex !important;
-    flex-direction: column !important; 
+    flex-direction: column !important;
     align-items: center;
     text-align: center;
-    background: transparent; 
+    background: transparent;
     padding: 0;
     border: none;
     box-shadow: none;
-    
-    /* 🔴 POSICIÓN DEL GRUPO COMPLETO EN EL PERGAMINO */
-    /* Aumenta (ej. 140px) si quieres bajar sobre+texto, disminuye (ej. 120px) para subirlos */
-    margin-top: -30px !important; 
+    margin-top: -30px !important;
+    flex-shrink: 0;
 }
 
 /* CONTENEDOR DE LA IMAGEN COMPLETA DEL SOBRE */
 .sobre-img-container {
     position: relative;
     width: 100%;
-    max-width: 130px; /* Tamaño del sobre mantenido */
+    max-width: 130px;
     margin: 0 auto !important;
-    order: 1 !important; 
+    order: 1 !important;
 }
 
 .img-sobre-cerrado {
@@ -92,20 +83,16 @@ body.fondo-abierto {
 }
 
 .pequeno {
-    max-width: 260px; 
+    max-width: 260px;
     width: 100%;
-    font-size: 0.72rem; /* Tamaño proporcional para evitar que tape el carrusel inferior */
-    letter-spacing: 1.5px; 
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
     color: #5c4535;
     font-weight: 700;
     line-height: 1.4;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
-
-    order: 2 !important; 
-
-    /* 🔴 SEPARACIÓN ENTRE SOBRE Y TEXTO */
-    /* Modifica este valor para acercar o alejar el texto de la base del sobre */
-    margin-top: 25px !important; 
+    order: 2 !important;
+    margin-top: 25px !important;
     margin-bottom: 0 !important;
 }
 
@@ -286,7 +273,8 @@ main {
     display: block;
 }
 
-.ornamento-dorado-top, .ornamento-dorado {
+.ornamento-dorado-top,
+.ornamento-dorado {
     font-size: 0.9rem;
     color: #b8860b;
     margin: 5px 0;
@@ -540,8 +528,13 @@ main {
     z-index: 10;
 }
 
-.arrow-btn.left { left: 10px; }
-.arrow-btn.right { right: 10px; }
+.arrow-btn.left {
+    left: 10px;
+}
+
+.arrow-btn.right {
+    right: 10px;
+}
 
 .slider-caption {
     font-size: 0.75rem;
@@ -569,13 +562,14 @@ main {
 ========================================= */
 
 #pantalla-sobre {
-    height: 100vh !important;
-    min-height: 100vh !important;
-    max-height: 100vh !important;
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
     overflow: hidden !important;
 }
 
 /* Evitar cualquier movimiento del contenido */
+
 #pantalla-sobre .contenedor-portada-cerrada {
     animation: none !important;
     transition: none !important;
@@ -600,6 +594,7 @@ main {
 }
 
 /* Desactivar cualquier efecto hover/touch */
+
 #pantalla-sobre .btn-sobre-click,
 #pantalla-sobre .btn-sobre-click:hover,
 #pantalla-sobre .btn-sobre-click:active,
