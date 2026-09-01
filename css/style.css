@@ -91,17 +91,19 @@ body.fondo-abierto {
 }
 
 .pequeno {
-
     font-size: 0.80rem;
-
     letter-spacing: 5px;
-
     color: #5c4535;
-
     font-weight: 600;
-
-    margin-bottom: 60px;
-
+    margin-bottom: 15px;
+    order: 2;
+}
+.sobre-img-container {
+    position: relative;
+    width: min(230px, 60vw);
+    max-width: 230px;
+    margin: -110px auto 0 auto;
+    order: 1;
 }
 
 .titulo-script-lg {
