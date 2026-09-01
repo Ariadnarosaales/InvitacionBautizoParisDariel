@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Cinzel', Georgia, serif;
-    background: url("../img/fondo3.jpg") top center / 100% auto repeat-y fixed;
+    background: url("../img/fondo3.jpg") center top / cover no-repeat fixed;
     color: #5c4535;
     line-height: 1.7;
     text-align: center;
@@ -36,8 +36,7 @@ body.fondo-abierto {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    /* Evita que la pantalla empuje la caja al centro absoluto */
-    align-items: flex-start !important; 
+    align-items: center !important; 
     padding: 20px 15px;
 }
 
@@ -45,7 +44,6 @@ body.fondo-abierto {
     max-width: 450px;
     width: 100%;
     display: flex !important;
-    /* Fuerza a colocar el sobre primero y el texto abajo */
     flex-direction: column !important; 
     align-items: center;
     text-align: center;
@@ -54,8 +52,9 @@ body.fondo-abierto {
     border: none;
     box-shadow: none;
     
-    /* 🔴 AJUSTA ESTE MARGEN (sube o baja el valor) para alinear ambos dentro del pergamino */
-    margin-top: 190px !important; 
+    /* 🔴 POSICIÓN DEL GRUPO COMPLETO EN EL PERGAMINO */
+    /* Aumenta (ej. 140px) si quieres bajar sobre+texto, disminuye (ej. 120px) para subirlos */
+    margin-top: -30px !important; 
 }
 
 /* CONTENEDOR DE LA IMAGEN COMPLETA DEL SOBRE */
@@ -64,8 +63,6 @@ body.fondo-abierto {
     width: 100%;
     max-width: 130px; /* Tamaño del sobre mantenido */
     margin: 0 auto !important;
-    
-    /* Fuerza al sobre a posicionarse en primer lugar */
     order: 1 !important; 
 }
 
@@ -88,18 +85,18 @@ body.fondo-abierto {
 .pequeno {
     max-width: 260px; 
     width: 100%;
-    font-size: 1.0rem; 
+    font-size: 0.72rem; /* Tamaño proporcional para evitar que tape el carrusel inferior */
     letter-spacing: 1.5px; 
     color: #5c4535;
     font-weight: 700;
     line-height: 1.4;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
 
-    /* Fuerza al texto a ir en segundo lugar (debajo del sobre) */
     order: 2 !important; 
 
-    /* 🔴 MARGEN SUPERIOR: Separa el texto hacia abajo del sobre */
-    margin-top: 15px !important; 
+    /* 🔴 SEPARACIÓN ENTRE SOBRE Y TEXTO */
+    /* Modifica este valor para acercar o alejar el texto de la base del sobre */
+    margin-top: 25px !important; 
     margin-bottom: 0 !important;
 }
 
