@@ -92,7 +92,7 @@ body.fondo-abierto {
     line-height: 1.4;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
     order: 2 !important;
-    margin-top: 25px !important;
+   margin-top: 5px !important;
     margin-bottom: 0 !important;
 }
 
