@@ -33,13 +33,22 @@ body.fondo-abierto {
 ========================================= */
 
 .portada {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center !important; 
-    padding: 20px 15px;
-}
 
+    min-height: 100vh;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center !important;
+
+    padding: 20px 15px;
+
+    overflow: hidden;
+
+}
 .contenedor-portada-cerrada {
     max-width: 450px;
     width: 100%;
@@ -556,49 +565,46 @@ main {
 }
 
 /* =========================================
-   BLOQUEO TOTAL DEL MOVIMIENTO EN PORTADA
+   PORTADA ESTÁTICA EN TELÉFONO
 ========================================= */
 
-.portada,
-.portada * {
+#pantalla-sobre {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+}
+
+/* Evitar cualquier movimiento del contenido */
+#pantalla-sobre .contenedor-portada-cerrada {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+#pantalla-sobre .sobre-img-container {
     animation: none !important;
     transition: none !important;
 }
 
-/* El grupo de la portada no puede desplazarse */
-.portada .contenedor-portada-cerrada {
+#pantalla-sobre .img-sobre-cerrado {
+    animation: none !important;
+    transition: none !important;
     transform: none !important;
 }
 
-/* Sobre */
-.portada .sobre-img-container,
-.portada .img-sobre-cerrado,
-.portada .btn-sobre-click {
+#pantalla-sobre .pequeno {
+    animation: none !important;
+    transition: none !important;
     transform: none !important;
 }
 
-/* Texto */
-.portada .pequeno,
-.portada .titulo-script-lg,
-.portada .nombre-bebe-script {
+/* Desactivar cualquier efecto hover/touch */
+#pantalla-sobre .btn-sobre-click,
+#pantalla-sobre .btn-sobre-click:hover,
+#pantalla-sobre .btn-sobre-click:active,
+#pantalla-sobre .btn-sobre-click:focus {
+    animation: none !important;
+    transition: none !important;
     transform: none !important;
-}
-
-/* Desactivar completamente las animaciones AOS SOLO en portada */
-.portada [data-aos],
-.portada [data-aos][data-aos],
-.portada [data-aos="fade-up"],
-.portada [data-aos="fade-down"],
-.portada [data-aos="fade-left"],
-.portada [data-aos="fade-right"],
-.portada [data-aos="zoom-in"],
-.portada [data-aos="zoom-out"] {
-    transform: none !important;
-    opacity: 1 !important;
-}
-
-/* Evitar desplazamiento horizontal/vertical accidental */
-html,
-body {
-    overflow-x: hidden;
 }
