@@ -1,103 +1,81 @@
-```css
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
 /* =========================================
-   ESTILOS GENERALES Y FONDO FIJO
+
+*   ESTILOS GENERALES Y FONDO*
+
 ========================================= */
 
 body {
+
     font-family: 'Cinzel', Georgia, serif;
 
+    background: url("../img/fondo3.jpg") top center / 100% auto repeat-y fixed;
+
     color: #5c4535;
+
     line-height: 1.7;
+
     text-align: center;
 
-    /* Necesario para controlar el fondo fijo */
-    position: relative;
-
-    /* Evita que aparezca un fondo adicional */
-    background: transparent;
-
-    min-height: 100vh;
 }
 
-/* =========================================
-   FONDO PRINCIPAL FIJO
-========================================= */
+body.fondo-abierto {
 
-body::before {
-    content: "";
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    /* Fondo inicial */
-    background-image: url("../img/fondo3.jpg");
-
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    /* El fondo permanece detrás de todo */
-    z-index: -1;
-
-    /* Evita que interfiera con botones o imágenes */
-    pointer-events: none;
-}
-
-/* =========================================
-   FONDO CUANDO SE ABRE LA INVITACIÓN
-========================================= */
-
-body.fondo-abierto::before {
     background-image: url("../img/fondo2.jpg");
 
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
-
-/* =========================================
-   ELEMENTOS OCULTOS
-========================================= */
 
 .oculto {
+
     display: none !important;
+
 }
 
 /* =========================================
-   PORTADA Y SOBRE CERRADO
+
+*   PORTADA Y SOBRE CERRADO*
+
 ========================================= */
 
 .portada {
+
     min-height: 100vh;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 20px 15px;
+
 }
 
 .contenedor-portada-cerrada {
+
     max-width: 450px;
+
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
     text-align: center;
@@ -109,9 +87,11 @@ body.fondo-abierto::before {
     border: none;
 
     box-shadow: none;
+
 }
 
 .pequeno {
+
     font-size: 0.80rem;
 
     letter-spacing: 5px;
@@ -121,9 +101,11 @@ body.fondo-abierto::before {
     font-weight: 600;
 
     margin-bottom: 60px;
+
 }
 
 .titulo-script-lg {
+
     font-family: 'Alex Brush', cursive;
 
     font-size: clamp(4.5rem, 12vw, 6.2rem);
@@ -135,9 +117,11 @@ body.fondo-abierto::before {
     line-height: 1;
 
     margin: 0;
+
 }
 
 .nombre-bebe-script {
+
     font-family: 'Alex Brush', cursive;
 
     font-size: clamp(3.2rem, 10vw, 4.8rem);
@@ -149,23 +133,25 @@ body.fondo-abierto::before {
     margin-top: 0px;
 
     margin-bottom: 140px;
+
 }
 
-/* =========================================
-   CONTENEDOR DE LA IMAGEN COMPLETA DEL SOBRE
-========================================= */
+/* CONTENEDOR DE LA IMAGEN COMPLETA DEL SOBRE */
 
 .sobre-img-container {
+
     position: relative;
 
-    width: 100%;
+    width: min(230px, 60vw);
 
-    max-width: 420px;
+    max-width: 230px;
 
-    margin: -100px auto 0 auto;
+    margin: -140px auto 0 auto;
+
 }
 
 .img-sobre-cerrado {
+
     width: 100%;
 
     height: auto;
@@ -173,38 +159,113 @@ body.fondo-abierto::before {
     display: block;
 
     margin: 0 auto;
+
+    transform: translateY(-40px);
+
 }
 
 .btn-sobre-click {
+
     cursor: pointer;
 
     transition: transform 0.3s ease;
+
 }
 
 .btn-sobre-click:hover {
-    transform: scale(1.02);
+
+    transform: translateY(-40px) scale(1.02);
+
 }
 
 /* =========================================
-   BOTONES FLOTANTES Y WHATSAPP
+
+*   CELULARES
+
+========================================= */
+
+@media (max-width: 600px) {
+
+    .sobre-img-container {
+
+        width: 160px;
+
+        max-width: 160px;
+
+    }
+
+    .img-sobre-cerrado {
+
+        transform: translateY(-45px);
+
+    }
+
+    .btn-sobre-click:hover {
+
+        transform: translateY(-45px) scale(1.02);
+
+    }
+
+}
+
+/* =========================================
+
+*   CELULARES MUY PEQUEÑOS
+
+========================================= */
+
+@media (max-width: 380px) {
+
+    .sobre-img-container {
+
+        width: 145px;
+
+        max-width: 145px;
+
+    }
+
+    .img-sobre-cerrado {
+
+        transform: translateY(-40px);
+
+    }
+
+    .btn-sobre-click:hover {
+
+        transform: translateY(-40px) scale(1.02);
+
+    }
+
+}
+
+/* =========================================
+
+*   BOTONES FLOTANTES Y WHATSAPP*
+
 ========================================= */
 
 .flotantes-container {
+
     position: fixed;
 
     bottom: 20px;
+
     right: 20px;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 12px;
 
     z-index: 999;
+
 }
 
 .btn-flotante {
+
     width: 50px;
+
     height: 50px;
 
     border-radius: 50%;
@@ -216,6 +277,7 @@ body.fondo-abierto::before {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     font-size: 1.4rem;
@@ -223,27 +285,31 @@ body.fondo-abierto::before {
     cursor: pointer;
 
     text-decoration: none;
+
 }
 
 .musica-btn {
+
     background: #fdf5ea;
 
     color: #8c6339;
+
 }
 
 /* =========================================
-   SECCIONES Y TARJETAS PRINCIPALES
+
+*   SECCIONES Y TARJETAS PRINCIPALES*
+
 ========================================= */
 
 main {
+
     padding-bottom: 40px;
 
-    /* Asegura que el contenido esté sobre el fondo */
-    position: relative;
-    z-index: 1;
 }
 
 .ventana {
+
     min-height: auto;
 
     padding: 15px 10px;
@@ -251,10 +317,13 @@ main {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
+
 }
 
 .contenido-ventana {
+
     max-width: 480px;
 
     width: 100%;
@@ -268,9 +337,11 @@ main {
     border: 1px solid rgba(197, 180, 152, 0.4);
 
     box-shadow: 0 8px 25px rgba(60, 45, 35, 0.08);
+
 }
 
 .subtitulo {
+
     font-size: 0.7rem;
 
     letter-spacing: 3px;
@@ -280,9 +351,11 @@ main {
     margin-top: 40px;
 
     font-weight: 600;
+
 }
 
 .titulo-script {
+
     font-family: 'Alex Brush', cursive;
 
     font-size: clamp(2.5rem, 5vw, 2rem);
@@ -290,10 +363,13 @@ main {
     color: #5c3a21;
 
     font-weight: normal;
+
 }
 
 .foto-principal {
+
     width: 200px;
+
     height: 200px;
 
     margin: 5px auto;
@@ -305,20 +381,27 @@ main {
     border: 6px solid #ffffff;
 
     box-shadow: 0 8px 25px rgba(60, 45, 35, 0.15);
+
 }
 
 .foto-principal img {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
+
 }
 
 /* =========================================
-   SOBRE ABIERTO Y CARTA DE BIENVENIDA
+
+*   SOBRE ABIERTO Y CARTA DE BIENVENIDA*
+
 ========================================= */
 
 .contenedor-sobre-abierto {
+
     position: relative;
 
     max-width: 480px;
@@ -326,35 +409,45 @@ main {
     width: 100%;
 
     margin: 0 auto;
+
 }
 
 .img-sobre-fondo {
+
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
     z-index: 1;
+
 }
 
 .contenido-tarjeta-sobre {
+
     position: relative;
 
     z-index: 2;
 
     padding: 30px 20px;
+
 }
 
 /* =========================================
-   TARJETA PAPÁS Y PADRINOS CON FOTOS
+
+*   TARJETA PAPÁS Y PADRINOS CON FOTOS*
+
 ========================================= */
 
 .familia-invitacion {
+
     position: relative;
 
     max-width: 440px;
@@ -368,9 +461,11 @@ main {
     border: 1px solid #c5b498;
 
     box-shadow: 0 4px 15px rgba(60, 45, 35, 0.05);
+
 }
 
 .familia-invitacion::before {
+
     content: "";
 
     position: absolute;
@@ -380,10 +475,13 @@ main {
     border: 1px solid #e8decb;
 
     pointer-events: none;
+
 }
 
 .foto-familiar-circulo {
+
     width: 110px;
+
     height: 110px;
 
     margin: 10px auto;
@@ -399,10 +497,13 @@ main {
     background: #ffffff;
 
     box-shadow: 0 4px 10px rgba(60, 45, 35, 0.08);
+
 }
 
 .foto-familiar-circulo img {
+
     width: 100%;
+
     height: 100%;
 
     border-radius: 50%;
@@ -410,18 +511,21 @@ main {
     object-fit: cover;
 
     display: block;
+
 }
 
-.ornamento-dorado-top,
-.ornamento-dorado {
+.ornamento-dorado-top, .ornamento-dorado {
+
     font-size: 0.9rem;
 
     color: #b8860b;
 
     margin: 5px 0;
+
 }
 
 .familia-encabezado {
+
     font-size: 0.75rem;
 
     letter-spacing: 3px;
@@ -429,9 +533,11 @@ main {
     color: #7a5c48;
 
     margin-bottom: 4px;
+
 }
 
 .familia-titulo {
+
     font-family: 'Alex Brush', cursive;
 
     font-size: 3.2rem;
@@ -443,9 +549,11 @@ main {
     color: #5c3a21;
 
     margin: 2px 0 6px;
+
 }
 
 .familia-nombres {
+
     font-size: 0.85rem;
 
     letter-spacing: 2px;
@@ -453,9 +561,11 @@ main {
     color: #4a382d;
 
     text-transform: uppercase;
+
 }
 
 .familia-y {
+
     font-size: 0.65rem;
 
     letter-spacing: 3px;
@@ -463,9 +573,11 @@ main {
     color: #7a5c48;
 
     margin: 18px 0 4px;
+
 }
 
 .padrinos-grid {
+
     display: flex;
 
     justify-content: center;
@@ -475,9 +587,11 @@ main {
     gap: 8px;
 
     margin-top: 10px;
+
 }
 
 .padrino-col {
+
     flex: 1;
 
     display: flex;
@@ -485,14 +599,19 @@ main {
     flex-direction: column;
 
     align-items: center;
+
 }
 
 .padrino-col .foto-familiar-circulo {
+
     width: 95px;
+
     height: 95px;
+
 }
 
 .ampersand-col {
+
     font-family: 'Alex Brush', cursive;
 
     font-size: 2rem;
@@ -500,9 +619,11 @@ main {
     color: #b8860b;
 
     margin-top: -20px;
+
 }
 
 .familia-nombres-col {
+
     font-size: 0.75rem;
 
     letter-spacing: 1px;
@@ -514,9 +635,11 @@ main {
     line-height: 1.3;
 
     margin-top: 5px;
+
 }
 
 .poema-texto {
+
     font-size: 1.30rem;
 
     color: #5c3a21;
@@ -528,13 +651,17 @@ main {
     margin-top: 15px;
 
     font-weight: 600;
+
 }
 
 /* =========================================
-   CUENTA REGRESIVA Y TARJETA HORIZONTAL
+
+*   CUENTA REGRESIVA Y TARJETA HORIZONTAL*
+
 ========================================= */
 
 .fecha-evento-sub {
+
     font-size: 0.85rem;
 
     letter-spacing: 2px;
@@ -544,9 +671,11 @@ main {
     font-weight: 600;
 
     margin: 5px 0 15px;
+
 }
 
 .timer {
+
     display: flex;
 
     justify-content: center;
@@ -558,23 +687,29 @@ main {
     margin: 15px 0 25px;
 
     color: #5c3a21;
+
 }
 
 .timer div {
+
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
+
 }
 
 .timer span {
+
     font-size: 2rem;
 
     font-weight: 600;
+
 }
 
 .timer small {
+
     display: block;
 
     font-size: 0.55rem;
@@ -582,9 +717,11 @@ main {
     letter-spacing: 2px;
 
     color: #7a5c48;
+
 }
 
 .tarjeta-mensaje-punteada {
+
     border: 2px dashed #c5b498;
 
     background: #ffffff;
@@ -596,9 +733,11 @@ main {
     max-width: 400px;
 
     margin: 15px auto 0 auto;
+
 }
 
 .img-mensaje-debajo {
+
     width: 100%;
 
     height: auto;
@@ -606,9 +745,11 @@ main {
     border-radius: 8px;
 
     display: block;
+
 }
 
 .texto-debajo-tarjeta {
+
     font-size: 0.8rem;
 
     letter-spacing: 1.5px;
@@ -616,13 +757,17 @@ main {
     color: #5c4535;
 
     margin-top: 15px;
+
 }
 
 /* =========================================
-   TARJETAS Y CABALLOS DE CARRUSEL
+
+*   TARJETAS Y CABALLOS DE CARRUSEL*
+
 ========================================= */
 
 .tarjetas-container-carrusel {
+
     width: 100%;
 
     max-width: 450px;
@@ -632,17 +777,21 @@ main {
     position: relative;
 
     margin: 20px auto 0 auto;
+
 }
 
 .tarjeta-link {
+
     display: block;
 
     text-decoration: none;
 
     transition: transform 0.3s ease;
+
 }
 
 .tarjeta-link img {
+
     width: 100%;
 
     height: auto;
@@ -650,17 +799,21 @@ main {
     display: block;
 
     filter: drop-shadow(0 8px 15px rgba(60, 45, 35, 0.15));
+
 }
 
 .caballo-decorativo {
+
     position: absolute;
 
     height: auto;
 
     pointer-events: none;
+
 }
 
 .caballo-izq {
+
     width: 170px;
 
     top: 10px;
@@ -668,9 +821,11 @@ main {
     left: 0px;
 
     z-index: 3;
+
 }
 
 .caballo-der {
+
     width: 140px;
 
     bottom: -25px;
@@ -678,9 +833,11 @@ main {
     right: -25px;
 
     z-index: 3;
+
 }
 
 .tarjeta-ceremonia {
+
     position: absolute;
 
     top: 0px;
@@ -690,9 +847,11 @@ main {
     width: 270px;
 
     z-index: 1;
+
 }
 
 .tarjeta-recepcion {
+
     position: absolute;
 
     bottom: 25px;
@@ -702,13 +861,17 @@ main {
     width: 300px;
 
     z-index: 2;
+
 }
 
 /* =========================================
-   RECUERDOS Y CONFIRMACIÓN
+
+*   RECUERDOS Y CONFIRMACIÓN*
+
 ========================================= */
 
 .tarjeta-punteada-carrusel {
+
     border: 2px dashed #c5b498;
 
     background: rgba(250, 255, 249, 0.767);
@@ -720,9 +883,11 @@ main {
     max-width: 450px;
 
     margin: 0 auto;
+
 }
 
 .slider-container {
+
     position: relative;
 
     display: flex;
@@ -732,9 +897,11 @@ main {
     justify-content: center;
 
     margin: 20px 0;
+
 }
 
 .slider-wrapper {
+
     width: 100%;
 
     height: 280px;
@@ -744,17 +911,21 @@ main {
     border-radius: 15px;
 
     overflow: hidden;
+
 }
 
 .slider-wrapper img {
+
     width: 100%;
 
     height: 100%;
 
     object-fit: contain;
+
 }
 
 .arrow-btn {
+
     position: absolute;
 
     top: 50%;
@@ -778,25 +949,25 @@ main {
     cursor: pointer;
 
     z-index: 10;
+
 }
 
-.arrow-btn.left {
-    left: 10px;
-}
+.arrow-btn.left { left: 10px; }
 
-.arrow-btn.right {
-    right: 10px;
-}
+.arrow-btn.right { right: 10px; }
 
 .slider-caption {
+
     font-size: 0.75rem;
 
     letter-spacing: 2px;
 
     color: #6b4e3d;
+
 }
 
 .boton {
+
     display: inline-block;
 
     text-decoration: none;
@@ -806,9 +977,11 @@ main {
     font-size: 0.85rem;
 
     margin-top: 15px;
+
 }
 
 .whatsapp {
+
     background: #7a5c48;
 
     color: #ffffff;
@@ -816,118 +989,5 @@ main {
     padding: 12px 24px;
 
     box-shadow: 0 4px 12px rgba(60, 45, 35, 0.15);
+
 }
-
-/* =========================================
-   AJUSTES PARA CELULAR
-========================================= */
-
-@media (max-width: 600px) {
-
-    body::before {
-        background-position: center top;
-        background-size: cover;
-    }
-
-    body.fondo-abierto::before {
-        background-position: center top;
-        background-size: cover;
-    }
-
-    .pequeno {
-        font-size: 0.70rem;
-        letter-spacing: 4px;
-    }
-
-    .sobre-img-container {
-        max-width: 380px;
-    }
-
-    .contenido-ventana {
-        padding: 22px 15px;
-    }
-
-    .poema-texto {
-        font-size: 1.10rem;
-    }
-
-    .timer {
-        gap: 10px;
-    }
-
-    .timer span {
-        font-size: 1.7rem;
-    }
-
-    .timer small {
-        font-size: 0.48rem;
-    }
-
-    .tarjetas-container-carrusel {
-        height: 400px;
-    }
-
-    .tarjeta-ceremonia {
-        width: 240px;
-        right: -10px;
-    }
-
-    .tarjeta-recepcion {
-        width: 270px;
-        left: -5px;
-    }
-
-    .caballo-izq {
-        width: 145px;
-    }
-
-    .caballo-der {
-        width: 120px;
-        right: -10px;
-    }
-}
-
-/* =========================================
-   PANTALLAS MUY PEQUEÑAS
-========================================= */
-
-@media (max-width: 380px) {
-
-    .sobre-img-container {
-        max-width: 340px;
-    }
-
-    .padrinos-grid {
-        gap: 3px;
-    }
-
-    .padrino-col .foto-familiar-circulo {
-        width: 85px;
-        height: 85px;
-    }
-
-    .familia-nombres-col {
-        font-size: 0.68rem;
-    }
-
-    .timer {
-        gap: 7px;
-    }
-
-    .timer span {
-        font-size: 1.5rem;
-    }
-
-    .tarjetas-container-carrusel {
-        height: 370px;
-    }
-
-    .tarjeta-ceremonia {
-        width: 220px;
-    }
-
-    .tarjeta-recepcion {
-        width: 245px;
-    }
-}
-```
