@@ -30,11 +30,12 @@ const sliderImg = document.getElementById("sliderImg");
 const btnPrev = document.getElementById("btnPrev");
 const btnNext = document.getElementById("btnNext");
 
-// ==========================================
+/// ==========================================
 // TRANSICIÓN AL PRESIONAR EL SOBRE
 // ==========================================
 
 if (btnAbrirSello) {
+
     btnAbrirSello.addEventListener("click", function () {
 
         if (pantallaSobre) {
@@ -78,11 +79,8 @@ if (btnAbrirSello) {
                 }, 100);
             }
 
-            // VOLVER AL INICIO
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            // VOLVER AL INICIO SIN ANIMACIÓN
+            window.scrollTo(0, 0);
 
         }, 400);
     });
