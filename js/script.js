@@ -8,18 +8,18 @@ const musica = document.getElementById("musica");
 
 // IMÁGENES DEL CARRUSEL DE RECUERDOS
 const imagenes = [
-    "img/001.jpg",
-    "img/002.jpg",
-    "img/003.jpg",
-    "img/005.jpg",
-    "img/006.jpg",
-    "img/007.jpg",
-    "img/008.jpg",
-    "img/009.jpg",
-    "img/010.jpg",
-    "img/012.jpg",
-    "img/013.jpg",
-    "img/015.jpg"
+    "../img/001.jpg",
+    "../img/002.jpg",
+    "../img/003.jpg",
+    "../img/005.jpg",
+    "../img/006.jpg",
+    "../img/007.jpg",
+    "../img/008.jpg",
+    "../img/009.jpg",
+    "../img/010.jpg",
+    "../img/012.jpg",
+    "../img/013.jpg",
+    "../img/015.jpg"
 ];
 let currentIndex = 0;
 
