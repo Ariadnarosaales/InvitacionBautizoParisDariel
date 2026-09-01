@@ -1,138 +1,156 @@
 * {
 
-    margin: 0;
+  margin: 0;
 
-    padding: 0;
+  padding: 0;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
 }
 
 html {
 
-    scroll-behavior: smooth;
+```
+scroll-behavior: smooth;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   ESTILOS GENERALES Y FONDO*
+**   ESTILOS GENERALES Y FONDO**
 
-========================================= */
+*========================================= */*
 
 body {
 
-    font-family: 'Cinzel', Georgia, serif;
+```
+font-family: 'Cinzel', Georgia, serif;
 
-    background: url("../img/fondo3.jpg") top center / 100% auto repeat-y fixed;
+background: **url**("../img/fondo3.jpg") top center / 100% auto repeat-y fixed;
 
-    color: #5c4535;
+color: #5c4535;
 
-    line-height: 1.7;
+line-height: 1.7;
 
-    text-align: center;
+text-align: center;
+```
 
 }
 
 body.fondo-abierto {
 
-    background-image: url("../img/fondo2.jpg");
+```
+background-image: **url**("../img/fondo2.jpg");
+```
 
 }
 
 .oculto {
 
-    display: none !important;
+```
+display: none **!important**;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   PORTADA Y SOBRE CERRADO*
+**   PORTADA Y SOBRE CERRADO**
 
-========================================= */
+*========================================= */*
 
 .portada {
 
-    min-height: 100vh;
+```
+min-height: 100vh;
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
 
-    padding: 20px 15px;
+padding: 20px 15px;
+```
 
 }
 
 .contenedor-portada-cerrada {
 
-    max-width: 450px;
+```
+max-width: 450px;
 
-    width: 100%;
+width: 100%;
 
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    align-items: center;
+align-items: center;
 
-    text-align: center;
+text-align: center;
 
-    background: transparent;
+background: transparent;
 
-    padding: 0;
+padding: 0;
 
-    border: none;
+border: none;
 
-    box-shadow: none;
+box-shadow: none;
+```
 
 }
 
 .pequeno {
 
-    font-size: 0.80rem;
+```
+font-size: 0.80rem;
 
-    letter-spacing: 5px;
+letter-spacing: 5px;
 
-    color: #5c4535;
+color: #5c4535;
 
-    font-weight: 600;
+font-weight: 600;
 
-    margin-bottom: 60px;
+margin-bottom: 60px;
+```
 
 }
 
 .titulo-script-lg {
 
-    font-family: 'Alex Brush', cursive;
+```
+font-family: 'Alex Brush', cursive;
 
-    font-size: clamp(4.5rem, 12vw, 6.2rem);
+font-size: **clamp**(4.5rem, 12vw, 6.2rem);
 
-    color: #5c3a21;
+color: #5c3a21;
 
-    font-weight: normal;
+font-weight: normal;
 
-    line-height: 1;
+line-height: 1;
 
-    margin: 0;
+margin: 0;
+```
 
 }
 
 .nombre-bebe-script {
 
-    font-family: 'Alex Brush', cursive;
+```
+font-family: 'Alex Brush', cursive;
 
-    font-size: clamp(3.2rem, 10vw, 4.8rem);
+font-size: **clamp**(3.2rem, 10vw, 4.8rem);
 
-    color: #5c3a21;
+color: #5c3a21;
 
-    font-weight: normal;
+font-weight: normal;
 
-    margin-top: 0px;
+margin-top: 0px;
 
-    margin-bottom: 140px;
+margin-bottom: 140px;
+```
 
 }
 
@@ -140,753 +158,901 @@ body.fondo-abierto {
 
 .sobre-img-container {
 
-    position: relative;
+```
+position: relative;
 
-    width: 100%;
+width: min(230px, 60vw);
 
-    max-width: 420px; /* Tamaño ideal para lucir el sobre junto con su nube */
+max-width: 230px;
 
-    margin: -100px auto 0 auto;
+margin: -140px auto 0 auto;
+```
 
 }
 
 .img-sobre-cerrado {
 
-    width: 100%;
+```
+width: 100%;
 
-    height: auto;
+height: auto;
 
-    display: block;
+display: block;
 
-    margin: 0 auto;
+margin: 0 auto;
+
+transform: translateY(-40px);
+```
 
 }
 
 .btn-sobre-click {
 
-    cursor: pointer;
+```
+cursor: pointer;
 
-    transition: transform 0.3s ease;
+transition: transform 0.3s ease;
+```
 
 }
 
 .btn-sobre-click:hover {
 
-    transform: scale(1.02);
+```
+transform: **scale**(1.02);
+```
 
 }
 
-/* =========================================
+@media (max-width: 600px) {
 
-*   BOTONES FLOTANTES Y WHATSAPP*
+```
+.sobre-img-container {
 
-========================================= */
+    width: 160px;
+
+    max-width: 160px;
+
+}
+
+.img-sobre-cerrado {
+
+    transform: translateY(-45px);
+
+}
+```
+
+}
+
+@media (max-width: 380px) {
+
+```
+.sobre-img-container {
+
+    width: 145px;
+
+    max-width: 145px;
+
+}
+
+.img-sobre-cerrado {
+
+    transform: translateY(-40px);
+
+}
+```
+
+}
+
+*/* =========================================*
+
+**   BOTONES FLOTANTES Y WHATSAPP**
+
+*========================================= */*
 
 .flotantes-container {
 
-    position: fixed;
+```
+position: fixed;
 
-    bottom: 20px;
+bottom: 20px;
 
-    right: 20px;
+right: 20px;
 
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    gap: 12px;
+gap: 12px;
 
-    z-index: 999;
+z-index: 999;
+```
 
 }
 
 .btn-flotante {
 
-    width: 50px;
+```
+width: 50px;
 
-    height: 50px;
+height: 50px;
 
-    border-radius: 50%;
+border-radius: 50%;
 
-    border: none;
+border: none;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+box-shadow: 0 4px 12px **rgba**(0, 0, 0, 0.2);
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
 
-    font-size: 1.4rem;
+font-size: 1.4rem;
 
-    cursor: pointer;
+cursor: pointer;
 
-    text-decoration: none;
+text-decoration: none;
+```
 
 }
 
 .musica-btn {
 
-    background: #fdf5ea;
+```
+background: #fdf5ea;
 
-    color: #8c6339;
+color: #8c6339;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   SECCIONES Y TARJETAS PRINCIPALES*
+**   SECCIONES Y TARJETAS PRINCIPALES**
 
-========================================= */
+*========================================= */*
 
 main {
 
-    padding-bottom: 40px;
+```
+padding-bottom: 40px;
+```
 
 }
 
 .ventana {
 
-    min-height: auto;
+```
+min-height: auto;
 
-    padding: 15px 10px;
+padding: 15px 10px;
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
+```
 
 }
 
 .contenido-ventana {
 
-    max-width: 480px;
+```
+max-width: 480px;
 
-    width: 100%;
+width: 100%;
 
-    background: rgba(250, 255, 249, 0.767);
+background: **rgba**(250, 255, 249, 0.767);
 
-    padding: 25px 18px;
+padding: 25px 18px;
 
-    border-radius: 20px;
+border-radius: 20px;
 
-    border: 1px solid rgba(197, 180, 152, 0.4);
+border: 1px solid **rgba**(197, 180, 152, 0.4);
 
-    box-shadow: 0 8px 25px rgba(60, 45, 35, 0.08);
+box-shadow: 0 8px 25px **rgba**(60, 45, 35, 0.08);
+```
 
 }
 
 .subtitulo {
 
-    font-size: 0.7rem;
+```
+font-size: 0.7rem;
 
-    letter-spacing: 3px;
+letter-spacing: 3px;
 
-    color: #7a5c48;
+color: #7a5c48;
 
-    margin-top: 40px;
+margin-top: 40px;
 
-    font-weight: 600;
+font-weight: 600;
+```
 
 }
 
 .titulo-script {
 
-    font-family: 'Alex Brush', cursive;
+```
+font-family: 'Alex Brush', cursive;
 
-    font-size: clamp(2.5rem, 5vw, 2rem);
+font-size: **clamp**(2.5rem, 5vw, 2rem);
 
-    color: #5c3a21;
+color: #5c3a21;
 
-    font-weight: normal;
+font-weight: normal;
+```
 
 }
 
 .foto-principal {
 
-    width: 200px;
+```
+width: 200px;
 
-    height: 200px;
+height: 200px;
 
-    margin: 5px auto;
+margin: 5px auto;
 
-    border-radius: 50%;
+border-radius: 50%;
 
-    overflow: hidden;
+overflow: hidden;
 
-    border: 6px solid #ffffff;
+border: 6px solid #ffffff;
 
-    box-shadow: 0 8px 25px rgba(60, 45, 35, 0.15);
+box-shadow: 0 8px 25px **rgba**(60, 45, 35, 0.15);
+```
 
 }
 
 .foto-principal img {
 
-    width: 100%;
+```
+width: 100%;
 
-    height: 100%;
+height: 100%;
 
-    object-fit: cover;
+object-fit: cover;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   SOBRE ABIERTO Y CARTA DE BIENVENIDA*
+**   SOBRE ABIERTO Y CARTA DE BIENVENIDA**
 
-========================================= */
+*========================================= */*
 
 .contenedor-sobre-abierto {
 
-    position: relative;
+```
+position: relative;
 
-    max-width: 480px;
+max-width: 480px;
 
-    width: 100%;
+width: 100%;
 
-    margin: 0 auto;
+margin: 0 auto;
+```
 
 }
 
 .img-sobre-fondo {
 
-    position: absolute;
+```
+position: absolute;
 
-    top: 0;
+top: 0;
 
-    left: 0;
+left: 0;
 
-    width: 100%;
+width: 100%;
 
-    height: 100%;
+height: 100%;
 
-    object-fit: cover;
+object-fit: cover;
 
-    z-index: 1;
+z-index: 1;
+```
 
 }
 
 .contenido-tarjeta-sobre {
 
-    position: relative;
+```
+position: relative;
 
-    z-index: 2;
+z-index: 2;
 
-    padding: 30px 20px;
+padding: 30px 20px;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   TARJETA PAPÁS Y PADRINOS CON FOTOS*
+**   TARJETA PAPÁS Y PADRINOS CON FOTOS**
 
-========================================= */
+*========================================= */*
 
 .familia-invitacion {
 
-    position: relative;
+```
+position: relative;
 
-    max-width: 440px;
+max-width: 440px;
 
-    margin: 15px auto;
+margin: 15px auto;
 
-    padding: 30px 15px;
+padding: 30px 15px;
 
-    background: rgba(250, 255, 249, 0.767);
+background: **rgba**(250, 255, 249, 0.767);
 
-    border: 1px solid #c5b498;
+border: 1px solid #c5b498;
 
-    box-shadow: 0 4px 15px rgba(60, 45, 35, 0.05);
+box-shadow: 0 4px 15px **rgba**(60, 45, 35, 0.05);
+```
 
 }
 
 .familia-invitacion::before {
 
-    content: "";
+```
+content: "";
 
-    position: absolute;
+position: absolute;
 
-    inset: 8px;
+inset: 8px;
 
-    border: 1px solid #e8decb;
+border: 1px solid #e8decb;
 
-    pointer-events: none;
+pointer-events: none;
+```
 
 }
 
 .foto-familiar-circulo {
 
-    width: 110px;
+```
+width: 110px;
 
-    height: 110px;
+height: 110px;
 
-    margin: 10px auto;
+margin: 10px auto;
 
-    border-radius: 50%;
+border-radius: 50%;
 
-    overflow: hidden;
+overflow: hidden;
 
-    border: 2px solid #c5b498;
+border: 2px solid #c5b498;
 
-    padding: 3px;
+padding: 3px;
 
-    background: #ffffff;
+background: #ffffff;
 
-    box-shadow: 0 4px 10px rgba(60, 45, 35, 0.08);
+box-shadow: 0 4px 10px **rgba**(60, 45, 35, 0.08);
+```
 
 }
 
 .foto-familiar-circulo img {
 
-    width: 100%;
+```
+width: 100%;
 
-    height: 100%;
+height: 100%;
 
-    border-radius: 50%;
+border-radius: 50%;
 
-    object-fit: cover;
+object-fit: cover;
 
-    display: block;
+display: block;
+```
 
 }
 
 .ornamento-dorado-top, .ornamento-dorado {
 
-    font-size: 0.9rem;
+```
+font-size: 0.9rem;
 
-    color: #b8860b;
+color: #b8860b;
 
-    margin: 5px 0;
+margin: 5px 0;
+```
 
 }
 
 .familia-encabezado {
 
-    font-size: 0.75rem;
+```
+font-size: 0.75rem;
 
-    letter-spacing: 3px;
+letter-spacing: 3px;
 
-    color: #7a5c48;
+color: #7a5c48;
 
-    margin-bottom: 4px;
+margin-bottom: 4px;
+```
 
 }
 
 .familia-titulo {
 
-    font-family: 'Alex Brush', cursive;
+```
+font-family: 'Alex Brush', cursive;
 
-    font-size: 3.2rem;
+font-size: 3.2rem;
 
-    font-weight: normal;
+font-weight: normal;
 
-    line-height: 1;
+line-height: 1;
 
-    color: #5c3a21;
+color: #5c3a21;
 
-    margin: 2px 0 6px;
+margin: 2px 0 6px;
+```
 
 }
 
 .familia-nombres {
 
-    font-size: 0.85rem;
+```
+font-size: 0.85rem;
 
-    letter-spacing: 2px;
+letter-spacing: 2px;
 
-    color: #4a382d;
+color: #4a382d;
 
-    text-transform: uppercase;
+text-transform: uppercase;
+```
 
 }
 
 .familia-y {
 
-    font-size: 0.65rem;
+```
+font-size: 0.65rem;
 
-    letter-spacing: 3px;
+letter-spacing: 3px;
 
-    color: #7a5c48;
+color: #7a5c48;
 
-    margin: 18px 0 4px;
+margin: 18px 0 4px;
+```
 
 }
 
 .padrinos-grid {
 
-    display: flex;
+```
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
 
-    gap: 8px;
+gap: 8px;
 
-    margin-top: 10px;
+margin-top: 10px;
+```
 
 }
 
 .padrino-col {
 
-    flex: 1;
+```
+flex: 1;
 
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    align-items: center;
+align-items: center;
+```
 
 }
 
 .padrino-col .foto-familiar-circulo {
 
-    width: 95px;
+```
+width: 95px;
 
-    height: 95px;
+height: 95px;
+```
 
 }
 
 .ampersand-col {
 
-    font-family: 'Alex Brush', cursive;
+```
+font-family: 'Alex Brush', cursive;
 
-    font-size: 2rem;
+font-size: 2rem;
 
-    color: #b8860b;
+color: #b8860b;
 
-    margin-top: -20px;
+margin-top: -20px;
+```
 
 }
 
 .familia-nombres-col {
 
-    font-size: 0.75rem;
+```
+font-size: 0.75rem;
 
-    letter-spacing: 1px;
+letter-spacing: 1px;
 
-    color: #4a382d;
+color: #4a382d;
 
-    text-transform: uppercase;
+text-transform: uppercase;
 
-    line-height: 1.3;
+line-height: 1.3;
 
-    margin-top: 5px;
+margin-top: 5px;
+```
 
 }
 
 .poema-texto {
 
-    font-size: 1.30rem;
+```
+font-size: 1.30rem;
 
-    color: #5c3a21;
+color: #5c3a21;
 
-    letter-spacing: 1px;
+letter-spacing: 1px;
 
-    line-height: 1.4;
+line-height: 1.4;
 
-    margin-top: 15px;
+margin-top: 15px;
 
-    font-weight: 600;
+font-weight: 600;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   CUENTA REGRESIVA Y TARJETA HORIZONTAL*
+**   CUENTA REGRESIVA Y TARJETA HORIZONTAL**
 
-========================================= */
+*========================================= */*
 
 .fecha-evento-sub {
 
-    font-size: 0.85rem;
+```
+font-size: 0.85rem;
 
-    letter-spacing: 2px;
+letter-spacing: 2px;
 
-    color: #6b4e3d;
+color: #6b4e3d;
 
-    font-weight: 600;
+font-weight: 600;
 
-    margin: 5px 0 15px;
+margin: 5px 0 15px;
+```
 
 }
 
 .timer {
 
-    display: flex;
+```
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    gap: 15px;
+gap: 15px;
 
-    font-size: 1.8rem;
+font-size: 1.8rem;
 
-    margin: 15px 0 25px;
+margin: 15px 0 25px;
 
-    color: #5c3a21;
+color: #5c3a21;
+```
 
 }
 
 .timer div {
 
-    display: flex;
+```
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    align-items: center;
+align-items: center;
+```
 
 }
 
 .timer span {
 
-    font-size: 2rem;
+```
+font-size: 2rem;
 
-    font-weight: 600;
+font-weight: 600;
+```
 
 }
 
 .timer small {
 
-    display: block;
+```
+display: block;
 
-    font-size: 0.55rem;
+font-size: 0.55rem;
 
-    letter-spacing: 2px;
+letter-spacing: 2px;
 
-    color: #7a5c48;
+color: #7a5c48;
+```
 
 }
 
 .tarjeta-mensaje-punteada {
 
-    border: 2px dashed #c5b498;
+```
+border: 2px dashed #c5b498;
 
-    background: #ffffff;
+background: #ffffff;
 
-    border-radius: 15px;
+border-radius: 15px;
 
-    padding: 20px 15px;
+padding: 20px 15px;
 
-    max-width: 400px;
+max-width: 400px;
 
-    margin: 15px auto 0 auto;
+margin: 15px auto 0 auto;
+```
 
 }
 
 .img-mensaje-debajo {
 
-    width: 100%;
+```
+width: 100%;
 
-    height: auto;
+height: auto;
 
-    border-radius: 8px;
+border-radius: 8px;
 
-    display: block;
+display: block;
+```
 
 }
 
 .texto-debajo-tarjeta {
 
-    font-size: 0.8rem;
+```
+font-size: 0.8rem;
 
-    letter-spacing: 1.5px;
+letter-spacing: 1.5px;
 
-    color: #5c4535;
+color: #5c4535;
 
-    margin-top: 15px;
+margin-top: 15px;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   TARJETAS Y CABALLOS DE CARRUSEL*
+**   TARJETAS Y CABALLOS DE CARRUSEL**
 
-========================================= */
+*========================================= */*
 
 .tarjetas-container-carrusel {
 
-    width: 100%;
+```
+width: 100%;
 
-    max-width: 450px;
+max-width: 450px;
 
-    height: 440px;
+height: 440px;
 
-    position: relative;
+position: relative;
 
-    margin: 20px auto 0 auto;
+margin: 20px auto 0 auto;
+```
 
 }
 
 .tarjeta-link {
 
-    display: block;
+```
+display: block;
 
-    text-decoration: none;
+text-decoration: none;
 
-    transition: transform 0.3s ease;
+transition: transform 0.3s ease;
+```
 
 }
 
 .tarjeta-link img {
 
-    width: 100%;
+```
+width: 100%;
 
-    height: auto;
+height: auto;
 
-    display: block;
+display: block;
 
-    filter: drop-shadow(0 8px 15px rgba(60, 45, 35, 0.15));
+filter: **drop-shadow**(0 8px 15px **rgba**(60, 45, 35, 0.15));
+```
 
 }
 
 .caballo-decorativo {
 
-    position: absolute;
+```
+position: absolute;
 
-    height: auto;
+height: auto;
 
-    pointer-events: none;
+pointer-events: none;
+```
 
 }
 
 .caballo-izq {
 
-    width: 170px;
+```
+width: 170px;
 
-    top: 10px;
+top: 10px;
 
-    left: 0px;
+left: 0px;
 
-    z-index: 3;
+z-index: 3;
+```
 
 }
 
 .caballo-der {
 
-    width: 140px;
+```
+width: 140px;
 
-    bottom: -25px;
+bottom: -25px;
 
-    right: -25px;
+right: -25px;
 
-    z-index: 3;
+z-index: 3;
+```
 
 }
 
 .tarjeta-ceremonia {
 
-    position: absolute;
+```
+position: absolute;
 
-    top: 0px;
+top: 0px;
 
-    right: -25px;
+right: -25px;
 
-    width: 270px;
+width: 270px;
 
-    z-index: 1;
+z-index: 1;
+```
 
 }
 
 .tarjeta-recepcion {
 
-    position: absolute;
+```
+position: absolute;
 
-    bottom: 25px;
+bottom: 25px;
 
-    left: -10px;
+left: -10px;
 
-    width: 300px;
+width: 300px;
 
-    z-index: 2;
+z-index: 2;
+```
 
 }
 
-/* =========================================
+*/* =========================================*
 
-*   RECUERDOS Y CONFIRMACIÓN*
+**   RECUERDOS Y CONFIRMACIÓN**
 
-========================================= */
+*========================================= */*
 
 .tarjeta-punteada-carrusel {
 
-    border: 2px dashed #c5b498;
+```
+border: 2px dashed #c5b498;
 
-    background: rgba(250, 255, 249, 0.767);
+background: **rgba**(250, 255, 249, 0.767);
 
-    border-radius: 20px;
+border-radius: 20px;
 
-    padding: 25px 15px;
+padding: 25px 15px;
 
-    max-width: 450px;
+max-width: 450px;
 
-    margin: 0 auto;
+margin: 0 auto;
+```
 
 }
 
 .slider-container {
 
-    position: relative;
+```
+position: relative;
 
-    display: flex;
+display: flex;
 
-    align-items: center;
+align-items: center;
 
-    justify-content: center;
+justify-content: center;
 
-    margin: 20px 0;
+margin: 20px 0;
+```
 
 }
 
 .slider-wrapper {
 
-    width: 100%;
+```
+width: 100%;
 
-    height: 280px;
+height: 280px;
 
-    background: #ffffff;
+background: #ffffff;
 
-    border-radius: 15px;
+border-radius: 15px;
 
-    overflow: hidden;
+overflow: hidden;
+```
 
 }
 
 .slider-wrapper img {
 
-    width: 100%;
+```
+width: 100%;
 
-    height: 100%;
+height: 100%;
 
-    object-fit: contain;
+object-fit: contain;
+```
 
 }
 
 .arrow-btn {
 
-    position: absolute;
+```
+position: absolute;
 
-    top: 50%;
+top: 50%;
 
-    transform: translateY(-50%);
+transform: **translateY**(-50%);
 
-    background: rgba(255, 255, 255, 0.9);
+background: **rgba**(255, 255, 255, 0.9);
 
-    color: #5c3a21;
+color: #5c3a21;
 
-    border: 1px solid #c5b498;
+border: 1px solid #c5b498;
 
-    width: 36px;
+width: 36px;
 
-    height: 36px;
+height: 36px;
 
-    border-radius: 50%;
+border-radius: 50%;
 
-    font-size: 1rem;
+font-size: 1rem;
 
-    cursor: pointer;
+cursor: pointer;
 
-    z-index: 10;
+z-index: 10;
+```
 
 }
 
@@ -896,36 +1062,42 @@ main {
 
 .slider-caption {
 
-    font-size: 0.75rem;
+```
+font-size: 0.75rem;
 
-    letter-spacing: 2px;
+letter-spacing: 2px;
 
-    color: #6b4e3d;
+color: #6b4e3d;
+```
 
 }
 
 .boton {
 
-    display: inline-block;
+```
+display: inline-block;
 
-    text-decoration: none;
+text-decoration: none;
 
-    border-radius: 30px;
+border-radius: 30px;
 
-    font-size: 0.85rem;
+font-size: 0.85rem;
 
-    margin-top: 15px;
+margin-top: 15px;
+```
 
 }
 
 .whatsapp {
 
-    background: #7a5c48;
+```
+background: #7a5c48;
 
-    color: #ffffff;
+color: #ffffff;
 
-    padding: 12px 24px;
+padding: 12px 24px;
 
-    box-shadow: 0 4px 12px rgba(60, 45, 35, 0.15);
+box-shadow: 0 4px 12px **rgba**(60, 45, 35, 0.15);
+```
 
 }
