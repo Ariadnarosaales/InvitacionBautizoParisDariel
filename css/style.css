@@ -556,25 +556,35 @@ main {
 }
 
 /* =========================================
-   FIJAR ELEMENTOS DE LA PORTADA
+   PORTADA FIJA - SIN MOVIMIENTO
 ========================================= */
 
-.portada {
-    position: relative;
-    overflow: hidden;
+.portada .sobre-img-container,
+.portada .img-sobre-cerrado,
+.portada .btn-sobre-click,
+.portada .pequeno,
+.portada .titulo-script-lg,
+.portada .nombre-bebe-script {
+    animation: none !important;
+    transition: none !important;
 }
 
-/* Sobre */
-.sobre-css-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+/* Evita que el sobre se mueva al pasar el mouse */
+.portada .btn-sobre-click,
+.portada .btn-sobre-click:hover,
+.portada .btn-sobre-click:active,
+.portada .btn-sobre-click:focus {
+    transform: none !important;
 }
 
-/* Texto debajo del sobre */
-.portada .frase {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+/* Evita movimientos provocados por AOS */
+.portada [data-aos] {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+/* Mantiene el grupo de la portada estable */
+.portada .contenedor-portada-cerrada {
+    transform: none !important;
 }
