@@ -92,10 +92,10 @@ body.fondo-abierto {
     line-height: 1.4;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
     order: 2 !important;
-    margin-top: -5px !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    top: -20px;
 }
-
 .titulo-script-lg {
     font-family: 'Alex Brush', cursive;
     font-size: clamp(4.5rem, 12vw, 6.2rem);
