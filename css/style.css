@@ -576,11 +576,14 @@ main {
     transform: none !important;
 }
 
-#pantalla-sobre .sobre-img-container {
-    animation: none !important;
-    transition: none !important;
+.sobre-img-container {
+    position: relative;
+    width: 100%;
+    max-width: 130px;
+    margin: 0 auto !important;
+    order: 1 !important;
+    top: -15px;
 }
-
 #pantalla-sobre .img-sobre-cerrado {
     animation: none !important;
     transition: none !important;
